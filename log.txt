@@ -1,2 +1,17 @@
-
 Premium, 23, 57.5
+Premium, 12, 30.0
+Mid-grade, 12, 14.399999999999999
+Premium, 2, 5.0
+Premium, 26, 65.0
+Mid-grade, 12, 14.399999999999999
+Premium, 23, 57.5
+Mid-grade, 12, 14.399999999999999
+Premium, 12, 30.0
+Mid-grade, 15, 18.0
+Premium, 12, 30.0
+Premium, 45, 112.5
+Mid-grade, 12, 14.399999999999999
+Premium, 23, 57.5
+Premium, 23, 57.5
+Premium, 5001, 12502.5
+Mid-grade, 12, 14.399999999999999

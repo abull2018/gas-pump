@@ -40,6 +40,7 @@ def inside_tank():
         left.append([split_string[0], float(split_string[1]), float(split_string[2])])
     return left
 
+
 def take_away(gas_type, amount):
     str_l = ['type, amount_in_tank, price']
     left = inside_tank()
@@ -55,6 +56,3 @@ def take_away(gas_type, amount):
     message = '\n'.join(str_l)
     with open('tank.txt', 'w') as file:
         file.write(message)
-
-
-
