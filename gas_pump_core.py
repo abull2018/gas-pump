@@ -11,7 +11,7 @@ def gas_price(gas, amount):
     else:
         return None
 
-def gas_type(gas):
+def gas_type(gas_price):
     message = ''
     if gas == '1':
         gas_type = 'Regular'
@@ -19,12 +19,9 @@ def gas_type(gas):
         gas_type = 'Mid-grade'
     elif gas == '3':
         gas_type = 'Premium'
+        
 
 
-
-
-def keep_log(gas, amount):
-    price = gas_price(gas, amount)
 
 def revenue_log():
     left = in_the_log()
@@ -33,21 +30,6 @@ def revenue_log():
         item[2] = float(item[2]) + float(item[2])
         price += item[2]
     return price
-    
-def take_away(gas_type, amount):
-    str_l = ['type, amount_in_tank, price']
-    left = inside_tank()
-    for item in left:
-        if item[0] == gas_type:
-            if float(amount) > item[1]:
-                print('Sorry Max amount reached! We only have 5000.0 gallons.')
-            else:
-                item[1] = float(item[1]) - float(amount)
-        item[1] = str(item[1])
-        item[2] = str(item[2])
-        str_l.append(', '.join(item))
-    message = '\n'.join(str_l)
-
 
 def refill():
     str_l = ['type, amount_in_tank, price']

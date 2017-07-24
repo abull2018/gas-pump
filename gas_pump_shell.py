@@ -23,8 +23,8 @@ def main():
     amount = input('How many gallons would you like?\n')
     print('Your total will be ${:.2F}'.format(gas_pump_core.gas_price(gas, amount)))
 
-    gas_type = gas_pump_core.keep_log(gas, amount)        
-    gas_pump_core.take_away(gas_type, amount)
+    gas_type = gas_pump_disk.keep_log(gas, amount)        
+    gas_pump_disk.take_away(gas_type, amount)
     print('Thank you, Have a Nice Day ;) !')
 
 if __name__ == '__main__': 
