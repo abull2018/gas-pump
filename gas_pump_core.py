@@ -1,3 +1,5 @@
+import gas_pump_disk
+
 def gas_price(gas, amount):
     """ (str) -> float"""
     if gas == '1':
@@ -9,9 +11,7 @@ def gas_price(gas, amount):
     else:
         return None
 
-def keep_log(gas, amount):
-    price = gas_price(gas, amount)
-
+def gas_type(gas):
     message = ''
     if gas == '1':
         gas_type = 'Regular'
@@ -19,21 +19,12 @@ def keep_log(gas, amount):
         gas_type = 'Mid-grade'
     elif gas == '3':
         gas_type = 'Premium'
-       
-       
-    message = '\n{}, {}, {}'.format(gas_type, amount, price)
-    with open('log.txt', 'a') as file:
-        file.write(message)
 
-def in_the_log():
-    left =[]
-    with open('log.txt', 'r') as file:
-        file.readline()
-        lines = file.readlines()
-    for line in lines:
-        split_string = line.strip().split(', ')
-        left.append([split_string[0], float(split_string[1]), float(split_string[2].replace('$', ''))])
-    return left
+
+
+
+def keep_log(gas, amount):
+    price = gas_price(gas, amount)
 
 def revenue_log():
     left = in_the_log()
@@ -42,16 +33,6 @@ def revenue_log():
         item[2] = float(item[2]) + float(item[2])
         price += item[2]
     return price
-
-def inside_tank():
-    left = []
-    with open('tank.txt', 'r') as file:
-        file.readline()
-        lines = file.readlines()
-    for line in lines:
-        split_string = line.strip().split(', ')
-        left.append([split_string[0], float(split_string[1]), float(split_string[2])])
-    return left
     
 def take_away(gas_type, amount):
     str_l = ['type, amount_in_tank, price']
@@ -67,8 +48,6 @@ def take_away(gas_type, amount):
         str_l.append(', '.join(item))
     message = '\n'.join(str_l)
 
-    with open('tank.txt', 'w') as file:
-        file.write(message)
 
 def refill():
     str_l = ['type, amount_in_tank, price']
@@ -80,7 +59,5 @@ def refill():
         item[2]=str(item[2])
         str_l.append(', '.join(item))
     message = '\n'.join(str_l)
-    
-    with open('tank.txt', 'w') as file:
-        file.write(message)
+
         

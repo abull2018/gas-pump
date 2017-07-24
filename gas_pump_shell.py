@@ -1,4 +1,5 @@
 import gas_pump_core
+import gas_pump_disk
 
 def main():
     msg = '''Welcome to Lane Station!! What type of gas would you like to purchase?\n
